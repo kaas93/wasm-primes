@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Looking for prime numbers with WebAssembly</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main id="main">
+      <button id="find-primes" disabled>Let's find some primes!</button>
+      <ul id="primes-list"></ul>
+      <footer id="benchmark"></footer>
+    </main>
+
+    <script src="js/base_primes.js"></script>
+    <script src="js/wasm_primes.js"></script>
+    <script src="js/js_primes.js"></script>
+    <script>
+(() => {
+  new WasmPrimes(
+    document.getElementById('find-primes'),
+    document.getElementById('primes-list'),
+    document.getElementById('benchmark')
+  ).initialize();
+})();
+    </script>
+  </body>
+</html>
