@@ -5,6 +5,7 @@
 }
 
 body {
+  background: #333;
   color: #222;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
@@ -17,6 +18,8 @@ body {
 }
 
 #find-primes {
+  display: block;
+  margin: 1em auto;
   font-family: inherit;
   font-size: 18px;
   padding: 6px 24px;
@@ -30,13 +33,16 @@ body {
 }
 
 #primes-list li {
+  display: inline-block;
   padding: 8px;
   margin: 4px;
-  font-size: 24px;
-  list-style-type: none;
-  display: inline-block;
-  text-align: right;
   width: 64px;
+
+  user-select: none;
+  list-style-type: none;
+  font-size: 24px;
+  text-align: right;
+  background: white;
   border: 1px solid #aaa;
   border-radius: 5px;
 }

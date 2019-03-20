@@ -7,6 +7,8 @@
   </head>
   <body>
     <main id="main">
+      <button onclick="initWasmPrimes()">Enable Wasm Primes</button>
+      <button onclick="initJsPrimes()">Enable Js Primes</button>
       <button id="find-primes" disabled>Let's find some primes!</button>
       <ul id="primes-list"></ul>
       <footer id="benchmark"></footer>
@@ -16,13 +18,17 @@
     <script src="js/wasm_primes.js"></script>
     <script src="js/js_primes.js"></script>
     <script>
-(() => {
-  new WasmPrimes(
-    document.getElementById('find-primes'),
-    document.getElementById('primes-list'),
-    document.getElementById('benchmark')
-  ).initialize();
-})();
+      const initPrimes = primeClass => {
+        new primeClass(
+          document.getElementById('find-primes'),
+          document.getElementById('primes-list'),
+          document.getElementById('benchmark')
+        ).initialize();
+      };
+      const initWasmPrimes = () => initPrimes(WasmPrimes);
+      const initJsPrimes = () => initPrimes(JsPrimes);
+
+      initWasmPrimes();
     </script>
   </body>
 </html>

@@ -39,6 +39,6 @@ class BasePrimes {
     this.timeMeasurements.push(time);
     const count = this.timeMeasurements.length;
     const mean = this.timeMeasurements.reduce((x, y) => x + y) / count;
-    this.benchmark.innerHTML = `Average time: ${mean.toFixed(4)} ms (${count} measurement${count > 1 ?  's' : ''})`;
+    this.benchmark.innerHTML = `Last time: ${time.toFixed(4)} ms<br/> Average time: ${mean.toFixed(4)} ms (${count} measurement${count > 1 ?  's' : ''})`;
   }
 }
